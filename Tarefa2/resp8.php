@@ -10,12 +10,12 @@
     <main class="container">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
+          $num1 = $_POST['num1'];
+          $num2 = $_POST['num2'];
 
-            $resultado = $num1 + $num2;
+          $area = $num1 * $num2;
 
-            echo "Resultado: $num1 + $num2 = $resultado";
+          echo "<p>A área do retângulo com largura {$num1} e altura {$num2} é: {$area}</p>";
         }
         ?>
     </main>   

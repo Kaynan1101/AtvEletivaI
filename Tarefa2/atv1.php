@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="container">
-        <form action="resp1.php" method="GET">
+        <form action="resp1.php" method="POST">
             <label for="num1" class="form-label">Número 1:</label>
             <input type="number" class="form-control" id="num1" name="num1">
 

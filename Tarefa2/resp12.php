@@ -10,12 +10,11 @@
     <main class="container">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
+          $num1 = $_POST['num1'];
+          $num2 = $_POST['num2'];
 
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+          $resultado = pow($num1, $num2);
+          echo "A base $num1 elevada ao expoente $num2 é $resultado";
         }
         ?>
     </main>   

@@ -12,10 +12,10 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $num1 = $_POST['num1'];
             $num2 = $_POST['num2'];
+            $num3 = $_POST['num3'];
 
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+            $media = ($num1 + $num2 + $num3) / 3;
+            echo "<p>A média das notas {$num1}, {$num2} e {$num3} é: {$media}</p>";
         }
         ?>
     </main>   

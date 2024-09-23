@@ -13,9 +13,9 @@
             $num1 = $_POST['num1'];
             $num2 = $_POST['num2'];
 
-            $resultado = $num1 + $num2;
+            $resultado = $num1 * $num2;
 
-            echo "Resultado: $num1 + $num2 = $resultado";
+            echo "Resultado: $num1 x $num2 = $resultado";
         }
         ?>
     </main>   

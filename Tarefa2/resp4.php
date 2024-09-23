@@ -12,10 +12,12 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $num1 = $_POST['num1'];
             $num2 = $_POST['num2'];
-
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+            if ($numero2 == 0) {
+              echo "<p>Divisão por zero proibida. Insira outro valor.</p>";
+          } else {
+              $resultado = $numero1 / $numero2;
+              echo "Resultado: $numero1 ÷ $numero2 = $resultado";
+          }
         }
         ?>
     </main>   

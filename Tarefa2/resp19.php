@@ -10,12 +10,16 @@
     <main class="container">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
+          $num1 = $_POST['num1'];
 
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+          $horas = $num1 * 24;
+          $minutos = $horas * 60;
+          $segundos = $minutos * 60;
+      
+          echo "Valor em dias: $num1 dias";
+          echo "Equivale a: $horas horas";
+          echo "Equivale a: $minutos minutos";
+          echo "Equivale a: $segundos segundos";
         }
         ?>
     </main>   

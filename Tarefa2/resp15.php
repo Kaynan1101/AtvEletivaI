@@ -10,12 +10,11 @@
     <main class="container">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
+          $num1 = $_POST['num1'];
+          $num2 = $_POST['num2'];
 
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+          $imc = $num1 / ($num2 * $num2);
+          echo "Seu IMC é " . number_format($imc, 2);
         }
         ?>
     </main>   

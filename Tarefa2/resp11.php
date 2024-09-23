@@ -10,12 +10,11 @@
     <main class="container">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
+          $num1 = $_POST['num1'];
 
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+          $pi = 3.14;
+          $area = $pi * 2 * $num1;
+          echo "O perímetro do círculo com raio {$num1} é {$area}";
         }
         ?>
     </main>   

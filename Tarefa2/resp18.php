@@ -10,12 +10,16 @@
     <main class="container">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
+          $num1 = $_POST['num1'];
+          $num2 = $_POST['num2'] / 100;
+          $num3 = $_POST['num3'];
 
-            $resultado = $num1 + $num2;
+          $montante = $num1 * pow((1 + $num2), $num3);
 
-            echo "Resultado: $num1 + $num2 = $resultado";
+          echo "Capital: R$ $num1";
+          echo "Juros: " . ($_POST['num2']);
+          echo "Tempo: $num3 anos";
+          echo "O montante com juros compostos é: R$ " . number_format($montante, 2);
         }
         ?>
     </main>   

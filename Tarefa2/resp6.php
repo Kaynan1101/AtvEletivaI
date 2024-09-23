@@ -11,11 +11,8 @@
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
-
-            $resultado = $num1 + $num2;
-
-            echo "Resultado: $num1 + $num2 = $resultado";
+            $fahrenheit = ($num1 * 9/5) + 32;
+            echo "<p>{$num1}°C é equivalente a {$fahrenheit}°F</p>";
         }
         ?>
     </main>   
