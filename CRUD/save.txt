@@ -1,0 +1,3 @@
+echo "<pre>"; print_r($obCliente); echo "</pre>"; exit; DEBUGER FUNÇÃO
+
+
