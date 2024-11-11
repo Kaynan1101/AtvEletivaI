@@ -55,4 +55,62 @@ class Database{
 
     }
 
+
+    /**
+     * @param string
+     * @param array
+     * @return PDOStatement
+     */
+    public function execute($query, $params = []){
+        try{
+            $statement = $this->connection->prepare($query);
+            $statement->execute($params);
+            return $statement;
+        }catch(PDOException $e){
+            die('ERROR: '.$e->getMessage());
+        }
+
+    }
+
+    /**
+     * @param array
+     * @return interger
+     */
+    public function insert($values){
+        //DADOS DA QUERY
+        $fields = array_keys($values);
+        $binds = array_pad([],count($fields),'?');
+
+        //MONTAGEM DA QUERY
+        $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields).') VALUES ('.implode(',',$binds).')';
+
+
+
+        //executa o insert
+        $this->execute($query,array_values($values));
+        return $this->connection->lastInsertId();
+
+
+    }
+
+    /**
+     * @param string
+     * @param string
+     * @param string
+     * @param string
+     * @return PDOStatement
+     * 
+     */
+    public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        //dados da query
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        $query = 'SELECT' .$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+
+        return $this->execute($query);
+
+    }
+
 }
