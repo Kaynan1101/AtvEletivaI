@@ -74,7 +74,7 @@ class Database{
 
     /**
      * @param array
-     * @return interger
+     * @return integer
      */
     public function insert($values){
         //DADOS DA QUERY

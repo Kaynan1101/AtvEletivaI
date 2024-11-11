@@ -8,9 +8,9 @@ use \PDO;
 class Cliente{
 
     /**
-     * @//var integer
+     * @var integer
      */
-    //public $id;
+    public $id_cliente;
 
     /**
      * @var string
@@ -38,12 +38,12 @@ class Cliente{
     public function cadastrar(){
         //inserir cliente no banco
         $obDatabase = new Database('clientes');
-        $obDatabase->insert([
-                                            'nome' => $this->nome,
-                                            'email' => $this->email,
-                                            'telefone' => $this->telefone,
-                                            'endereco' => $this->endereco
-                                        ]);
+        $this->id_cliente = $obDatabase->insert([
+                                                    'nome' => $this->nome,
+                                                    'email' => $this->email,
+                                                    'telefone' => $this->telefone,
+                                                    'endereco' => $this->endereco
+                                                ]);
 
 
         //retornar sucesso
@@ -63,12 +63,12 @@ class Cliente{
     }
 
     /**
-     * param integer
-     * return Cliente
+     * @param integer
+     * @return Cliente
      */
-    //public static function getCliente($id){
-        //return (new Database('clientes'))->select('id =' .$id)
-                                        //->fetchObject(self::class);
-    //}
+    public static function getCliente($id_cliente){
+        return (new Database('clientes'))->select('id_cliente = ' .$id_cliente)
+                                            ->fetchObject(self::class);
+    }
 
 }

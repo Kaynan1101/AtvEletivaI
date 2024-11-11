@@ -3,16 +3,16 @@
     $resultados = '';
     foreach($clientes as $cliente){
         $resultados .= '<tr>
-                            <td>'.$cliente->id.'</td>
+                            <td>'.$cliente->id_cliente.'</td>
                             <td>'.$cliente->nome.'</td>
                             <td>'.$cliente->email.'</td>
                             <td>'.$cliente->telefone.'</td>
                             <td>'.$cliente->endereco.'</td>
                             <td>
-                                <a href="editar.php?id='.$cliente->id.'">
+                                <a href="editar.php?id='.$cliente->id_cliente.'">
                                     <button type="button" class="btn btn-primary">EDITAR</button>
                                 </a>
-                                <a href="excluir.php?id='.$cliente->id.'">
+                                <a href="excluir.php?id='.$cliente->id_cliente.'">
                                     <button type="button" class="btn btn-danger">EXCLUIR</button>
                                 </a>
                             </td>
