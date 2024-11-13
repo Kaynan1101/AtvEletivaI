@@ -51,6 +51,28 @@ class Cliente{
 
     }
 
+
+    /**
+     * @return boolean
+     */
+    public function Atualizar(){
+        return (new Database('clientes'))->update('id_cliente = '.$this->id_cliente, [
+                                                                                        'nome' => $this->nome,
+                                                                                        'email' => $this->email,
+                                                                                        'telefone' => $this->telefone,
+                                                                                        'endereco' => $this->endereco
+                                                                                    ]);
+
+    }
+
+
+    /**
+     * @return boolean
+     */
+    public function Excluir(){
+        return (new Database('clientes'))->delete('id_cliente = '.$this->id_cliente);
+    }
+
     /**
      * @param string
      * @param string
@@ -70,5 +92,7 @@ class Cliente{
         return (new Database('clientes'))->select('id_cliente = ' .$id_cliente)
                                             ->fetchObject(self::class);
     }
+
+
 
 }

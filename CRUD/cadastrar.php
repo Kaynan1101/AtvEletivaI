@@ -1,11 +1,15 @@
 <?php
-require __DIR__.'/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
+
+define('TITLE', 'CADASTRAR VAGA');
 
 use \App\Entity\Cliente;
+$obCliente = new Cliente;
 
 //validação do post
-if(isset($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['endereco'])){
-    $obCliente = new Cliente;
+if (isset($_POST['nome'],$_POST['email'],$_POST['telefone'],$_POST['endereco'])){
+
+
     $obCliente->nome = $_POST['nome'];
     $obCliente->email = $_POST['email'];
     $obCliente->telefone = $_POST['telefone'];
@@ -14,10 +18,8 @@ if(isset($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['endereco']
 
     header('location: index.php?status=success');
     exit;
-    
 }
 
-include __DIR__.'/includes/header.php';
-include __DIR__.'/includes/formcli.php';
-include __DIR__.'/includes/footer.php';
-
+include __DIR__ . '/includes/header.php';
+include __DIR__ . '/includes/formcli.php';
+include __DIR__ . '/includes/footer.php';

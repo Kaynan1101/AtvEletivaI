@@ -113,4 +113,42 @@ class Database{
 
     }
 
+    /**
+     * @param string
+     * @param array
+     * @return boolean
+     */
+    public function update($where,$values){
+        //dados da query
+        $fields = array_keys($values);
+
+
+        //monta query
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=? WHERE '.$where;
+
+        //EXECUTAR QUERY
+        $this->execute($query, array_values($values));
+
+        //retorna sucesso
+        return true;
+
+    }
+
+    /**
+     * @param string
+     * @return boolean
+     */
+    public function delete($where){
+
+        //monta query
+        $query = 'DELETE FROM '.$this->table.' WHERE ' .$where;
+
+        //executa query
+        $this->execute($query);
+
+        //retorna sucesso
+        return true;
+
+    }
+
 }
