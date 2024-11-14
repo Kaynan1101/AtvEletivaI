@@ -14,18 +14,18 @@
     }
 
     $resultados = '';
-    foreach($clientes as $cliente){
+    foreach($destinos as $destino){
         $resultados .= '<tr>
-                            <td>'.$cliente->id_cliente.'</td>
-                            <td>'.$cliente->nome.'</td>
-                            <td>'.$cliente->email.'</td>
-                            <td>'.$cliente->telefone.'</td>
-                            <td>'.$cliente->endereco.'</td>
+                            <td>'.$destino->id_destino.'</td>
+                            <td>'.$destino->nome.'</td>
+                            <td>'.$destino->descricao.'</td>
+                            <td>'.$destino->pais.'</td>
+                            <td>'.$destino->cidade.'</td>
                             <td>
-                                <a href="editar.php?id='.$cliente->id_cliente.'">
+                                <a href="editar-dest.php?id='.$destino->id_destino.'">
                                     <button type="button" class="btn btn-primary">EDITAR</button>
                                 </a>
-                                <a href="excluir.php?id='.$cliente->id_cliente.'">
+                                <a href="excluir-dest.php?id='.$destino->id_destino.'">
                                     <button type="button" class="btn btn-danger">EXCLUIR</button>
                                 </a>
                             </td>
@@ -33,7 +33,7 @@
     }
 
     $resultados = strlen($resultados) ? $resultados : '<tr>
-                                                        <td colspan="6" class="text-center">Nenhum cliente encontrado
+                                                        <td colspan="6" class="text-center">Nenhum destino encontrado
                                                         </td>
                                                     </tr>';
 
@@ -45,13 +45,13 @@
 
     <?=$mensagem?>
 
-    <section class="col mt-3">
-        <a href="index-dest.php">
-            <button class="btn btn-success">Visualizar Destinos</button>
+    <section class="col mt-3" >
+        <a href="index.php">
+            <button class="btn btn-success">Visualizar Clientes</button>
         </a>
 
-        <a href="cadastrar.php">
-            <button class="btn btn-success">Novo Cliente</button>
+        <a href="cadastrar-dest.php">
+            <button class="btn btn-success">Novo Destino</button>
         </a>
     </section>
 
@@ -61,9 +61,9 @@
                 <tr>
                 <th>ID</th>
                 <th>NOME</th>
-                <th>EMAIL</th>
-                <th>TELEFONE</th>
-                <th>ENDERECO</th>
+                <th>DESCRIÇÃO</th>
+                <th>PAÍS</th>
+                <th>CIDADE</th>
                 <th>AÇÕES</th>
                 </tr>
             </thead>

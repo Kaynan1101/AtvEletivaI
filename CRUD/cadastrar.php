@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-define('TITLE', 'CADASTRAR VAGA');
+define('TITLE', 'CADASTRAR CLIENTE');
 
 use \App\Entity\Cliente;
 $obCliente = new Cliente;
