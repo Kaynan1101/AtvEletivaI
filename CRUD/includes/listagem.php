@@ -50,6 +50,10 @@
             <button class="btn btn-success">Visualizar Destinos</button>
         </a>
 
+        <a href="index-pac.php">
+            <button class="btn btn-success">Visualizar Pacotes</button>
+        </a>
+
         <a href="cadastrar.php">
             <button class="btn btn-success">Novo Cliente</button>
         </a>

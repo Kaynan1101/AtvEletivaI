@@ -14,18 +14,17 @@
     }
 
     $resultados = '';
-    foreach($destinos as $destino){
+    foreach($pacotes as $pacote){
         $resultados .= '<tr>
-                            <td>'.$destino->id_destino.'</td>
-                            <td>'.$destino->nome.'</td>
-                            <td>'.$destino->descricao.'</td>
-                            <td>'.$destino->pais.'</td>
-                            <td>'.$destino->cidade.'</td>
+                            <td>'.$pacote->id_pacote.'</td>
+                            <td>'.$pacote->dt_inicio.'</td>
+                            <td>'.$pacote->dt_fim.'</td>
+                            <td>'.$pacote->valor.'</td>
                             <td>
-                                <a href="editar-dest.php?id='.$destino->id_destino.'">
+                                <a href="editar-pac.php?id='.$pacote->id_pacote.'">
                                     <button type="button" class="btn btn-primary">EDITAR</button>
                                 </a>
-                                <a href="excluir-dest.php?id='.$destino->id_destino.'">
+                                <a href="excluir-pac.php?id='.$pacote->id_pacote.'">
                                     <button type="button" class="btn btn-danger">EXCLUIR</button>
                                 </a>
                             </td>
@@ -33,7 +32,7 @@
     }
 
     $resultados = strlen($resultados) ? $resultados : '<tr>
-                                                        <td colspan="6" class="text-center">Nenhum destino encontrado
+                                                        <td colspan="6" class="text-center">Nenhum pacote encontrado
                                                         </td>
                                                     </tr>';
 
@@ -50,12 +49,12 @@
             <button class="btn btn-success">Visualizar Clientes</button>
         </a>
 
-        <a href="index-pac.php">
-            <button class="btn btn-success">Visualizar Pacotes</button>
+        <a href="index-dest.php">
+            <button class="btn btn-success">Visualizar Destinos</button>
         </a>
 
-        <a href="cadastrar-dest.php">
-            <button class="btn btn-success">Novo Destino</button>
+        <a href="cadastrar-pac.php">
+            <button class="btn btn-success">Novo Pacote</button>
         </a>
     </section>
 
@@ -64,10 +63,9 @@
             <thead>
                 <tr>
                 <th>ID</th>
-                <th>NOME</th>
-                <th>DESCRIÇÃO</th>
-                <th>PAÍS</th>
-                <th>CIDADE</th>
+                <th>DATA DE INÍCIO</th>
+                <th>DATA DE TÉRMINO</th>
+                <th>VALOR</th>
                 <th>AÇÕES</th>
                 </tr>
             </thead>
