@@ -12,7 +12,7 @@ if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
 }
 
 //CONSULTA VAGA
-$obPacotes = Pacotes::getPacotes($_GET['id']);
+$obPacotes = Pacotes::getPacote($_GET['id']);
 
 //validar vaga
 if(!$obPacotes instanceof Pacotes) {
